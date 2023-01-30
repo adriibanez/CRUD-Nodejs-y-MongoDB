@@ -1,0 +1,38 @@
+<div class="container">
+
+  <div class="row row-cols-3 bg-dark p-4 rounded d-flex justify-content-center">
+
+    {{#if tasks}}
+    {{#each tasks}}
+      <div class="col">
+
+        <div class="card rounded m-3" style="width: 18rem;">
+          <div class="card-body text-center">
+            <h5 class="card-title">{{title}}</h5>
+            <p class="card-text">{{description}}</p>
+          </div>
+
+          {{#if done}}
+            <a href="/tasks/{{_id}}/toggleDone" class="btn btn-dark">Undone</a>
+          {{else}}
+            <a href="/tasks/{{_id}}/toggleDone" class="btn btn-success">Done</a>
+          {{/if}}
+
+          <a href="/tasks/{{_id}}/edit" class="btn btn-info">Editar</a>
+          <a href="/tasks/{{_id}}/delete" class="btn btn-danger">Eliminar</a>
+        </div>
+      
+      </div>
+    {{/each}}
+
+    {{else}}
+      <div class="text-center">
+        <h1 class="text-light">No hay tareas para mostrar</h1>
+      <img src="/icons/empty.svg" class="img img-fluid w-75 mt-4" alt="">
+        </div>
+  </div>
+{{/if}}
+  
+
+</div>
+

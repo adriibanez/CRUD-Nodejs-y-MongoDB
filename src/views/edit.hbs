@@ -1,0 +1,26 @@
+<form action="/tasks/{{task._id}}/edit" method="POST">
+  <div class="form-group">
+    <label for="title">Título de tarea</label>
+    <input
+      type="text"
+      class="form-control"
+      id="title"
+      name="title"
+      placeholder="Título de la tarea"
+      value="{{task.title}}"
+    />
+  </div>
+  <div class="form-group">
+    <label for="description">Descripción de la tarea</label>
+    <input
+      type="text"
+      class="form-control"
+      id="description"
+      name="description"
+      placeholder="Descripción de la tarea"
+      value="{{task.description}}"
+    />
+  </div>
+  <button class="btn btn-success">Guardar Cambios</button>
+
+</form>
